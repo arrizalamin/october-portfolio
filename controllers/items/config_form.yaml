@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Item
+
+# Model Form Field configuration
+form: $/arrizalamin/portfolio/models/item/fields.yaml
+
+# Model Class name
+modelClass: ArrizalAmin\Portfolio\Models\Item
+
+# Default redirect location
+defaultRedirect: arrizalamin/portfolio/items
+
+# Create page
+create:
+    title: Create Item
+    redirect: arrizalamin/portfolio/items/update/:id
+    redirectClose: arrizalamin/portfolio/items
+
+# Update page
+update:
+    title: Edit Item
+    redirect: arrizalamin/portfolio/items
+    redirectClose: arrizalamin/portfolio/items
+
+# Preview page
+preview:
+    title: Preview Item

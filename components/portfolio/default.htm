@@ -1,0 +1,15 @@
+<div class="container">
+    {% for item in __SELF__.portfolio %}
+        <div>
+            {% set image = item.images.first %}
+            <a href="{{ item.url }}">
+                <img src="{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
+            </a>
+        </div>
+        <h2 class="text-center">{{ item.title }}</h2>
+        <div class="text-center">
+            {{ item.description|raw }}
+        </div>
+    {% endfor %}
+</div>
+

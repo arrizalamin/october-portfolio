@@ -1,0 +1,12 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        searchable: true
+    description:
+        label: Description
+        type: textarea
+        searchable: false

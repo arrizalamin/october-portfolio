@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Title
+        span: left
+    category:
+        label: Category
+        span: right
+        type: relation
+        nameFrom: name
+    description:
+        label: Description
+        type: richeditor
+    images:
+        label: Images
+        type: fileupload
+        mode: image
+    url:
+        label: URL
+        type: text
