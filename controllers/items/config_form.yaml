@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Item
+name: arrizalamin.portfolio::lang.controller.form.items.title
 
 # Model Form Field configuration
 form: $/arrizalamin/portfolio/models/item/fields.yaml
@@ -16,16 +16,12 @@ defaultRedirect: arrizalamin/portfolio/items
 
 # Create page
 create:
-    title: Create Item
+    title: arrizalamin.portfolio::lang.controller.form.items.create
     redirect: arrizalamin/portfolio/items/update/:id
     redirectClose: arrizalamin/portfolio/items
 
 # Update page
 update:
-    title: Edit Item
+    title: arrizalamin.portfolio::lang.controller.form.items.update
     redirect: arrizalamin/portfolio/items
     redirectClose: arrizalamin/portfolio/items
-
-# Preview page
-preview:
-    title: Preview Item

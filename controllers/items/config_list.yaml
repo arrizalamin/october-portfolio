@@ -9,7 +9,7 @@ list: $/arrizalamin/portfolio/models/item/columns.yaml
 modelClass: ArrizalAmin\Portfolio\Models\Item
 
 # List Title
-title: Manage Items
+title: arrizalamin.portfolio::lang.controller.list.items
 
 # Link URL for each record
 recordUrl: arrizalamin/portfolio/items/update/:id

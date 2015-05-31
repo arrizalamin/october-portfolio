@@ -17,8 +17,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Portfolio',
-            'description' => 'A plugin that allows you to show off your past projects.',
+            'name'        => 'arrizalamin.portfolio::lang.plugin.name',
+            'description' => 'arrizalamin.portfolio::lang.plugin.description',
             'author'      => 'Arrizal Amin',
             'icon'        => 'icon-trophy',
             'homepage'    => 'https://github.com/arrizalamin/october-portfolio'
@@ -29,18 +29,18 @@ class Plugin extends PluginBase
     {
         return [
             'portfolio' => [
-                'label' => 'Portfolio',
+                'label' => 'arrizalamin.portfolio::lang.navigation.label',
                 'url' => Backend::url('arrizalamin/portfolio/items'),
                 'icon' => 'icon-trophy',
                 'order' => 500,
                 'sideMenu' => [
                     'items' => [
-                        'label' => 'Items',
+                        'label' => 'arrizalamin.portfolio::lang.navigation.sideMenu.items',
                         'icon' => 'icon-certificate',
                         'url' => Backend::url('arrizalamin/portfolio/items'),
                     ],
                     'categories' => [
-                        'label' => 'Categories',
+                        'label' => 'arrizalamin.portfolio::lang.navigation.sideMenu.categories',
                         'icon' => 'icon-folder',
                         'url' => Backend::url('arrizalamin/portfolio/categories'),
                     ]

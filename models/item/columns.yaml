@@ -4,12 +4,12 @@
 
 columns:
     id:
-        label: ID
+        label: arrizalamin.portfolio::lang.columns.item.id
         searchable: true
     title:
-        label: Title
+        label: arrizalamin.portfolio::lang.columns.item.title
         searchable: true
     category:
-        label: Category
+        label: arrizalamin.portfolio::lang.columns.item.category
         relation: category
         select: name

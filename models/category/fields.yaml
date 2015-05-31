@@ -4,9 +4,9 @@
 
 fields:
     name:
-        label: Name
+        label: arrizalamin.portfolio::lang.fields.category.name
         searchable: true
     description:
-        label: Description
+        label: arrizalamin.portfolio::lang.fields.category.description
         type: textarea
         searchable: false

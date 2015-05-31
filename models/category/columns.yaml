@@ -4,11 +4,11 @@
 
 columns:
     id:
-        label: ID
+        label: arrizalamin.portfolio::lang.columns.category.id
         searchable: true
     name:
-        label: Name
+        label: arrizalamin.portfolio::lang.columns.category.name
         searchable: true
     description:
-        label: Description
+        label: arrizalamin.portfolio::lang.columns.category.description
         searchable: false

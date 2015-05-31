@@ -12,8 +12,8 @@ class Portfolio extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Portfolio',
-            'description' => 'Create a list of portfolio.'
+            'name'        => 'arrizalamin.portfolio::lang.components.portfolio.name',
+            'description' => 'arrizalamin.portfolio::lang.components.portfolio.description'
         ];
     }
 

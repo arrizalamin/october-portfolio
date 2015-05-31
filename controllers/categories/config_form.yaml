@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Category
+name: arrizalamin.portfolio::lang.controller.form.categories.title
 
 # Model Form Field configuration
 form: $/arrizalamin/portfolio/models/category/fields.yaml
@@ -16,16 +16,12 @@ defaultRedirect: arrizalamin/portfolio/categories
 
 # Create page
 create:
-    title: Create Category
+    title: arrizalamin.portfolio::lang.controller.form.categories.create
     redirect: arrizalamin/portfolio/categories/update/:id
     redirectClose: arrizalamin/portfolio/categories
 
 # Update page
 update:
-    title: Edit Category
+    title: arrizalamin.portfolio::lang.controller.form.categories.update
     redirect: arrizalamin/portfolio/categories
     redirectClose: arrizalamin/portfolio/categories
-
-# Preview page
-preview:
-    title: Preview Category
