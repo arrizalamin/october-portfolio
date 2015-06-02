@@ -19,9 +19,12 @@ create:
     title: arrizalamin.portfolio::lang.controller.form.items.create
     redirect: arrizalamin/portfolio/items/update/:id
     redirectClose: arrizalamin/portfolio/items
+    flashSave: arrizalamin.portfolio::lang.controller.form.items.flashCreate
 
 # Update page
 update:
     title: arrizalamin.portfolio::lang.controller.form.items.update
     redirect: arrizalamin/portfolio/items
     redirectClose: arrizalamin/portfolio/items
+    flashSave: arrizalamin.portfolio::lang.controller.form.items.flashUpdate
+    flashDelete: arrizalamin.portfolio::lang.controller.form.items.flashDelete

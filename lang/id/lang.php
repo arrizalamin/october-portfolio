@@ -44,11 +44,18 @@ return [
                 'title' => 'Item',
                 'create' => 'Buat Item',
                 'update' => 'Perbarui Item'
+                'flashCreate' => 'Item sukses dibuat',
+                'flashUpdate' => 'Item sukses diperbarui',
+                'flashDelete' => 'Item sukses dihapus'
             ],
             'categories' => [
                 'title' => 'Kategori',
                 'create' => 'Buat Kategori',
-                'update' => 'Perbarui Kategori'
+                'update' => 'Perbarui Kategori',
+                'flashCreate' => 'Kategori sukses dibuat',
+                'flashUpdate' => 'Kategori sukses diperbarui',
+                'flashDelete' => 'Kategori sukses dihapus'
+
             ]
         ],
     ],

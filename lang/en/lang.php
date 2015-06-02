@@ -43,12 +43,18 @@ return [
             'items' => [
                 'title' => 'Item',
                 'create' => 'Create Item',
-                'update' => 'Update Item'
+                'update' => 'Update Item',
+                'flashCreate' => 'The Item has been created successfully',
+                'flashUpdate' => 'The Item has been updated successfully',
+                'flashDelete' => 'The Item has been deleted successfully'
             ],
             'categories' => [
                 'title' => 'Category',
                 'create' => 'Create Category',
-                'update' => 'Update Category'
+                'update' => 'Update Category',
+                'flashCreate' => 'The Category has been created successfully',
+                'flashUpdate' => 'The Category has been updated successfully',
+                'flashDelete' => 'The Category has been deleted successfully'
             ]
         ],
     ],
