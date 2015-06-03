@@ -25,6 +25,19 @@ class Portfolio extends ComponentBase
                 'type' => 'dropdown',
                 'default' => '1',
                 'placeholder' => 'Select Category'
+            ],
+            'pageNumber' => [
+                'title' => 'Page Number',
+                'description' => 'This value is used to determine what page the user is on.',
+                'type' => 'string',
+                'default' => '{{ :page }}',
+            ],
+            'itemsPerPage' => [
+                'title'             => 'Items per page',
+                'type'              => 'string',
+                'validationPattern' => '^[0-9]+$',
+                'validationMessage' => 'Invalid format of the items per page value',
+                'default'           => '6',
             ]
         ];
     }
@@ -44,7 +57,7 @@ class Portfolio extends ComponentBase
         if (! $category = Category::find($this->property('category')) )
             return null;
 
-        return $category->items;
+        return $category->items()->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
     }
 
 }
