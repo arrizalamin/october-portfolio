@@ -21,22 +21,22 @@ class Portfolio extends ComponentBase
     {
         return [
             'category' => [
-                'title' => 'Category',
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.category.title',
                 'type' => 'dropdown',
                 'default' => '1',
-                'placeholder' => 'Select Category'
+                'placeholder' => 'arrizalamin.portfolio::lang.components.portfolio.properties.category.placeholder'
             ],
             'pageNumber' => [
-                'title' => 'Page Number',
-                'description' => 'This value is used to determine what page the user is on.',
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.pageNumber.title',
+                'description' => 'arrizalamin.portfolio::lang.components.portfolio.properties.pageNumber.description',
                 'type' => 'string',
                 'default' => '{{ :page }}',
             ],
             'itemsPerPage' => [
-                'title'             => 'Items per page',
+                'title'             => 'arrizalamin.portfolio::lang.components.portfolio.properties.itemsPerPage.title',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'Invalid format of the items per page value',
+                'validationMessage' => 'arrizalamin.portfolio::lang.components.portfolio.properties.itemsPerPage.validationMessage',
                 'default'           => '6',
             ]
         ];

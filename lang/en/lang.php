@@ -16,6 +16,20 @@ return [
         'portfolio' => [
             'name' => 'Portfolio',
             'description' => 'Create a list of portfolio.',
+            'properties' => [
+                'category' => [
+                    'title' => 'Category',
+                    'placeholder' => 'Select Category'
+                ],
+                'pageNumber' => [
+                    'title' => 'Page Number',
+                    'description' => 'This value is used to determine what page the user is on.'
+                ],
+                'itemsPerPage' => [
+                    'title' => 'Items per page',
+                    'validationMessage' => 'Invalid format of the items per page value'
+                ]
+            ]
         ],
     ],
     'controller' => [
