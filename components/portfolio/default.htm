@@ -1,15 +1,34 @@
 <div class="container">
     {% for item in __SELF__.portfolio %}
-        <div>
-            {% set image = item.images.first %}
-            <a href="{{ item.url }}">
-                <img src="{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
-            </a>
-        </div>
-        <h2 class="text-center">{{ item.title }}</h2>
-        <div class="text-center">
-            {{ item.description|raw }}
-        </div>
+    <div>
+        {% set image = item.images.first %}
+        <a href="{{ item.url }}">
+            <img src="{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
+        </a>
+    </div>
+    <h2 class="text-center">{{ item.title }}</h2>
+    <div class="text-center">
+        {{ item.description|raw }}
+    </div>
     {% endfor %}
+
+    {% if __SELF__.portfolio.lastPage > 1 %}
+    <ul class="pagination">
+        {% if __SELF__.portfolio.currentPage > 1 %}
+        <li><a href="{{ this.page.baseFileName|page({ page: (__SELF__.portfolio.currentPage - 1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..__SELF__.portfolio.lastPage %}
+        <li class="{{ __SELF__.portfolio.currentPage == page ? 'active' : null }}">
+            <a href="{{ this.page.baseFileName|page({ page: page }) }}">{{ page }}</a>
+        </li>
+        {% endfor %}
+
+        {% if __SELF__.portfolio.lastPage > __SELF__.portfolio.currentPage %}
+        <li><a href="{{ this.page.baseFileName|page({ page: (__SELF__.portfolio.currentPage + 1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+    {% endif %}
+
 </div>
 

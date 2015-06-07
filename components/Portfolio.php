@@ -21,10 +21,23 @@ class Portfolio extends ComponentBase
     {
         return [
             'category' => [
-                'title' => 'Category',
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.category.title',
                 'type' => 'dropdown',
                 'default' => '1',
-                'placeholder' => 'Select Category'
+                'placeholder' => 'arrizalamin.portfolio::lang.components.portfolio.properties.category.placeholder'
+            ],
+            'pageNumber' => [
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.pageNumber.title',
+                'description' => 'arrizalamin.portfolio::lang.components.portfolio.properties.pageNumber.description',
+                'type' => 'string',
+                'default' => '{{ :page }}',
+            ],
+            'itemsPerPage' => [
+                'title'             => 'arrizalamin.portfolio::lang.components.portfolio.properties.itemsPerPage.title',
+                'type'              => 'string',
+                'validationPattern' => '^[0-9]+$',
+                'validationMessage' => 'arrizalamin.portfolio::lang.components.portfolio.properties.itemsPerPage.validationMessage',
+                'default'           => '6',
             ]
         ];
     }
@@ -44,7 +57,7 @@ class Portfolio extends ComponentBase
         if (! $category = Category::find($this->property('category')) )
             return null;
 
-        return $category->items;
+        return $category->items()->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
     }
 
 }
