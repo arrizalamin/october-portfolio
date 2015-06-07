@@ -19,7 +19,8 @@ return [
             'properties' => [
                 'category' => [
                     'title' => 'Category',
-                    'placeholder' => 'Select Category'
+                    'placeholder' => 'Select Category',
+                    'all' => 'All'
                 ],
                 'pageNumber' => [
                     'title' => 'Page Number',

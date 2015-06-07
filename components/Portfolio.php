@@ -4,6 +4,7 @@ use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
 use ArrizalAmin\Portfolio\Models\Item;
 use ArrizalAmin\Portfolio\Models\Category;
+use Lang;
 
 class Portfolio extends ComponentBase
 {
@@ -44,7 +45,9 @@ class Portfolio extends ComponentBase
 
     public function getCategoryOptions()
     {
-        return Category::lists('name', 'id');
+        $categories = Category::lists('name', 'id');
+        $categories[0] = Lang::get('arrizalamin.portfolio::lang.components.portfolio.properties.category.all');
+        return $categories;
     }
 
     public function onRun()
@@ -55,7 +58,7 @@ class Portfolio extends ComponentBase
     protected function loadItems()
     {
         if (! $category = Category::find($this->property('category')) )
-            return null;
+            return Item::paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
 
         return $category->items()->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
     }
