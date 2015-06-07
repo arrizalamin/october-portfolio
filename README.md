@@ -33,8 +33,12 @@ Now you can embed portfolio in your pages. Just use the portfolio component in y
 
 Simple use case:
 ~~~
+title = "Portfolio"
+url = "/portfolio/:page?"
+
 [portfolio]
-category = "2"
+category = "0"
+itemsPerPage = "5"
 ==
 <div class="container">
     {% component 'portfolio' %}
