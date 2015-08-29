@@ -29,6 +29,10 @@ return [
                 'itemsPerPage' => [
                     'title' => 'Items per page',
                     'validationMessage' => 'Invalid format of the items per page value'
+                ],
+                'order' => [
+                    'title' => 'Order',
+                    'placeholder' => 'Select Order',
                 ]
             ]
         ],
@@ -40,14 +44,14 @@ return [
                 'breadcrumb_label' => 'Items',
                 'return' => 'Return to items list',
                 'creating' => 'Creating Item...',
-                'delete_confirmation' => 'Do you really want to delete this item?' 
+                'delete_confirmation' => 'Do you really want to delete this item?'
             ],
             'categories' => [
                 'new' => 'New Item',
                 'breadcrumb_label' => 'Categories',
                 'return' => 'Return to categories list',
                 'creating' => 'Creating Category...',
-                'delete_confirmation' => 'Do you really want to delete this category?' 
+                'delete_confirmation' => 'Do you really want to delete this category?'
             ]
         ],
         'list' => [

@@ -39,6 +39,12 @@ class Portfolio extends ComponentBase
                 'validationPattern' => '^[0-9]+$',
                 'validationMessage' => 'arrizalamin.portfolio::lang.components.portfolio.properties.itemsPerPage.validationMessage',
                 'default'           => '6',
+            ],
+            'order' => [
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.order.title',
+                'placeholder' => 'arrizalamin.portfolio::lang.components.portfolio.properties.order.placeholder',
+                'type' => 'dropdown',
+                'default' => 'asc'
             ]
         ];
     }
@@ -48,6 +54,11 @@ class Portfolio extends ComponentBase
         $categories = Category::lists('name', 'id');
         $categories[0] = Lang::get('arrizalamin.portfolio::lang.components.portfolio.properties.category.all');
         return $categories;
+    }
+
+    public function getOrderOptions()
+    {
+        return ['asc' => 'Ascending', 'desc' => 'Descending'];
     }
 
     public function onRun()
@@ -60,7 +71,7 @@ class Portfolio extends ComponentBase
         if (! $category = Category::find($this->property('category')) )
             return Item::paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
 
-        return $category->items()->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
+        return $category->items()->orderBy('created_at', $this->property('order'))->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
     }
 
 }
