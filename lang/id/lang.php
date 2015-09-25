@@ -20,7 +20,7 @@ return [
     ],
     'permissions' => [
         'tab' => 'Portfolio',
-        'manage' => 'Perbarui Portfolio'
+        'manage' => 'Manajemen Portfolio'
     ],
     'controller' => [
         'view' => [
