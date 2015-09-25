@@ -25,6 +25,19 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * @return array
+     */
+    public function registerPermissions()
+    {
+        return [
+            'arrizalamin.portfolio.access_portfolio' => [
+                'tab'   => 'arrizalamin.portfolio::lang.permissions.tab',
+                'label' => 'arrizalamin.portfolio::lang.permissions.manage',
+            ],
+        ];
+    }
+
     public function registerNavigation()
     {
         return [
@@ -32,14 +45,17 @@ class Plugin extends PluginBase
                 'label' => 'arrizalamin.portfolio::lang.navigation.label',
                 'url' => Backend::url('arrizalamin/portfolio/items'),
                 'icon' => 'icon-trophy',
+                'permissions' => ['arrizalamin.portfolio.access_portfolio'],
                 'order' => 500,
                 'sideMenu' => [
                     'items' => [
+                        'permissions' => ['arrizalamin.portfolio.access_portfolio'],
                         'label' => 'arrizalamin.portfolio::lang.navigation.sideMenu.items',
                         'icon' => 'icon-certificate',
                         'url' => Backend::url('arrizalamin/portfolio/items'),
                     ],
                     'categories' => [
+                        'permissions' => ['arrizalamin.portfolio.access_portfolio'],
                         'label' => 'arrizalamin.portfolio::lang.navigation.sideMenu.categories',
                         'icon' => 'icon-folder',
                         'url' => Backend::url('arrizalamin/portfolio/categories'),

@@ -18,6 +18,10 @@ return [
             'description' => 'Buat daftar portofolio.',
         ],
     ],
+    'permissions' => [
+        'tab' => 'Portfolio',
+        'manage' => 'Perbarui Portfolio'
+    ],
     'controller' => [
         'view' => [
             'items' => [
@@ -43,7 +47,7 @@ return [
             'items' => [
                 'title' => 'Item',
                 'create' => 'Buat Item',
-                'update' => 'Perbarui Item'
+                'update' => 'Perbarui Item',
                 'flashCreate' => 'Item sukses dibuat',
                 'flashUpdate' => 'Item sukses diperbarui',
                 'flashDelete' => 'Item sukses dihapus'
