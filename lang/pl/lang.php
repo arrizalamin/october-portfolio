@@ -12,6 +12,10 @@ return [
             'categories' => 'Kategorie'
         ]
     ],
+    'permissions' => [
+        'tab' => 'Portfolio',
+        'manage' => 'Zarządzaj Portfolio'
+    ],
     'components' => [
         'portfolio' => [
             'name' => 'Portfolio',
