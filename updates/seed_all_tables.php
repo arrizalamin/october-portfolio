@@ -1,4 +1,4 @@
-<?php namespace RainLab\Blog\Updates;
+<?php namespace ArrizalAmin\Portfolio\Updates;
 
 use ArrizalAmin\Portfolio\Models\Category;
 use October\Rain\Database\Updates\Seeder;
