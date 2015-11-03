@@ -13,3 +13,7 @@ columns:
         label: arrizalamin.portfolio::lang.columns.item.category
         relation: category
         select: name
+    tags:
+        label: arrizalamin.portfolio::lang.columns.item.tags
+        relation: tags
+        select: name

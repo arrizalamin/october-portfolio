@@ -9,7 +9,8 @@ return [
         'label' => 'Portfolio',
         'sideMenu' => [
             'items' => 'Items',
-            'categories' => 'Categorieën'
+            'categories' => 'Categorieën',
+            'tags' => 'Tags'
         ]
     ],
     'permissions' => [
@@ -26,6 +27,10 @@ return [
                     'placeholder' => 'Selecteer categorie',
                     'all' => 'Allemaal'
                 ],
+                'selectedTag' => [
+                    'title' => 'Geselecteerde tag',
+                    'description' => 'Verander deze waarde afhankelijk van de gebruikte identifier in de URL van deze pagina. Zie ook de handleiding van deze plugin.'
+                ],
                 'pageNumber' => [
                     'title' => 'Pagina nummer',
                     'description' => 'Dit wordt gebruikt om te bepalen op welke pagina de gebruiker zich bevind.'
@@ -37,6 +42,11 @@ return [
                 'order' => [
                     'title' => 'Volgorde',
                     'placeholder' => 'Selecteer volgorde',
+                    'ascending' => 'Oplopend',
+                    'descending' => 'Aflopend'
+                ],
+                'group' => [
+                    'advanced' => 'Geavanceerd'
                 ]
             ]
         ],
@@ -47,37 +57,53 @@ return [
                 'new' => 'Nieuw item',
                 'breadcrumb_label' => 'Items',
                 'return' => 'Terug naar de item lijst',
-                'creating' => 'Maak item aan...',
-                'delete_confirmation' => 'Wil je dit item verwijderen?'
+                'creating' => 'Aanmaken van item...',
+                'delete_confirmation' => 'Weet je zeker dat je dit item wilt verwijderen?'
             ],
             'categories' => [
                 'new' => 'Nieuwe categorie',
                 'breadcrumb_label' => 'Categorieën',
                 'return' => 'Terug naar de categorieën lijst',
-                'creating' => 'Maak categorie aan...',
-                'delete_confirmation' => 'Wil je deze categorie verwijderen?'
+                'creating' => 'Aanmaken van categorie...',
+                'delete_confirmation' => 'Weet je zeker dat je deze categorie wilt verwijderen?'
+            ],
+            'tags' => [
+                'new' => 'Nieuwe tag',
+                'breadcrumb_label' => 'Tags',
+                'return' => 'Terug naar het tags overzicht',
+                'creating' => 'Aanmaken van tag...',
+                'delete_confirmation' => 'Weet je zeker dat je deze tag wilt verwijderen?'
             ]
         ],
         'list' => [
-            'items' => 'Beheer items',
-            'categories' => 'Beheer categorieën'
+            'items' => 'Items beheren',
+            'categories' => 'Categorieën beheren',
+            'tags' => 'Tags beheren'
         ],
         'form' => [
             'items' => [
                 'title' => 'Item',
-                'create' => 'Maak item',
-                'update' => 'Wijzig item',
+                'create' => 'Item aanmaken',
+                'update' => 'Item wijzigen',
                 'flashCreate' => 'Het item is aangemaakt',
                 'flashUpdate' => 'Het item is gewijzigd',
                 'flashDelete' => 'Het item is verwijderd'
             ],
             'categories' => [
                 'title' => 'Categorie',
-                'create' => 'Maak categorie',
-                'update' => 'Wijzig categorie',
+                'create' => 'Categorie aanmaken',
+                'update' => 'Categorie wijzigen',
                 'flashCreate' => 'De categorie is aangemaakt',
                 'flashUpdate' => 'De categorie is geupdate',
                 'flashDelete' => 'De categorie is verwijderd'
+            ],
+            'tags' => [
+                'title' => 'Tags',
+                'create' => 'Tag aanmaken',
+                'update' => 'Tag wijzigen',
+                'flashCreate' => 'De tag is aangemaakt',
+                'flashUpdate' => 'De tag is geupdate',
+                'flashDelete' => 'De tag is verwijderd'
             ]
         ],
     ],
@@ -91,6 +117,11 @@ return [
             'id' => 'ID',
             'name' => 'Naam',
             'description' => 'Beschrijving'
+        ],
+        'tag' => [
+            'id' => 'ID',
+            'name' => 'Naam',
+            'items' => 'Items met deze tag'
         ]
     ],
     'fields' => [
@@ -104,6 +135,11 @@ return [
         'category' => [
             'name' => 'Naam',
             'description' => 'Beschrijving'
+        ],
+        'tag' => [
+            'name' => 'Naam',
+            'items' => 'Items',
+            'notavailable' => 'No items available'
         ]
     ],
 ];

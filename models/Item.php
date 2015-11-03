@@ -28,6 +28,37 @@ class Item extends Model
         'images' => ['System\Models\File']
     ];
 
+    public $belongsToMany = [
+        'tags' => [
+            'ArrizalAmin\Portfolio\Models\Tag',
+            'table' => 'arrizalamin_portfolio_item_tag',
+            'order' => 'name'
+        ]
+    ];
+
+    /**
+     * @var array Container for tags to be attached
+     */
+    private $tags = [];
+
+    /**
+     * Get tagbox
+     *
+     * @return mixed
+     */
+    public function getTagboxAttribute(){
+        return $this->tags()->lists('name');
+    }
+
+    /**
+     * Set tags
+     *
+     * @param $tags
+     */
+    public function setTagboxAttribute($tags){
+        $this->tags = $tags;
+    }
+
      /**
      * Add translation support to this model, if available.
      * @return void
@@ -46,8 +77,21 @@ class Item extends Model
 
             // Implement the translatable behavior
             $model->implement[] = 'RainLab.Translate.Behaviors.TranslatableModel';
-
         });
     }
 
+    public function save(array $options = NULL, $sessionKey = NULL)
+    {
+        parent::save($options, $sessionKey);
+
+        if($this->tags){
+            $ids = [];
+            foreach($this->tags as $name){
+                $create = Tag::firstOrCreate(['name' => $name]);
+                $ids[] = $create->id;
+            }
+
+            $this->tags()->sync($ids);
+        }
+    }
 }

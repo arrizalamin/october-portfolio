@@ -1,15 +1,26 @@
 <div class="container">
     {% for item in __SELF__.portfolio %}
+    {% if item.images|length > 0 %}
     <div>
         {% set image = item.images.first %}
         <a href="{{ item.url }}">
             <img src="{{ image.path }}" class="img-responsive" alt="{{ image.title }}">
         </a>
     </div>
+    {% endif %}
     <h2 class="text-center">{{ item.title }}</h2>
+    {% if item.tags|length > 0 %}
+    <div class="text-center">
+        {% for tag in item.tags %}
+        <a href="\portfolio\tags\{{ tag.name}}"><span class="label label-default">{{ tag.name }}</span></a>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% if item.description %}
     <div class="text-center">
         {{ item.description|raw }}
     </div>
+    {% endif %}
     {% endfor %}
 
     {% if __SELF__.portfolio.lastPage > 1 %}
