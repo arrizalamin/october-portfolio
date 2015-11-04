@@ -59,17 +59,42 @@ class Plugin extends PluginBase
                         'label' => 'arrizalamin.portfolio::lang.navigation.sideMenu.categories',
                         'icon' => 'icon-folder',
                         'url' => Backend::url('arrizalamin/portfolio/categories'),
+                    ],
+                    'tags' => [
+                        'permissions' => ['arrazalamin.portfolio.access_portfolio'],
+                        'label' => 'arrizalamin.portfolio::lang.navigation.sideMenu.tags',
+                        'icon' => 'icon-tag',
+                        'url' => Backend::url('arrizalamin/portfolio/tags'),
                     ]
                 ]
             ]
         ];
     }
 
+    /**
+     * Owl registration
+     *
+     * @return array
+     */
+    public function registerFormWidgets()
+    {
+        return [
+            'Owl\FormWidgets\Tagbox\Widget' => [
+                'label' => 'Tagbox',
+                'code' => 'owl-tagbox'
+            ],
+        ];
+    }
+
+    /**
+     * Register Components
+     *
+     * @return array
+     */
     public function registerComponents()
     {
         return [
             'ArrizalAmin\Portfolio\Components\Portfolio' => 'portfolio'
         ];
     }
-
 }

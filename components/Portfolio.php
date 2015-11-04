@@ -1,9 +1,9 @@
 <?php namespace ArrizalAmin\Portfolio\Components;
 
 use Cms\Classes\ComponentBase;
-use Cms\Classes\Page;
 use ArrizalAmin\Portfolio\Models\Item;
 use ArrizalAmin\Portfolio\Models\Category;
+use ArrizalAmin\Portfolio\Models\Tag;
 use Lang;
 
 class Portfolio extends ComponentBase
@@ -27,12 +27,6 @@ class Portfolio extends ComponentBase
                 'default' => '1',
                 'placeholder' => 'arrizalamin.portfolio::lang.components.portfolio.properties.category.placeholder'
             ],
-            'pageNumber' => [
-                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.pageNumber.title',
-                'description' => 'arrizalamin.portfolio::lang.components.portfolio.properties.pageNumber.description',
-                'type' => 'string',
-                'default' => '{{ :page }}',
-            ],
             'itemsPerPage' => [
                 'title'             => 'arrizalamin.portfolio::lang.components.portfolio.properties.itemsPerPage.title',
                 'type'              => 'string',
@@ -45,6 +39,20 @@ class Portfolio extends ComponentBase
                 'placeholder' => 'arrizalamin.portfolio::lang.components.portfolio.properties.order.placeholder',
                 'type' => 'dropdown',
                 'default' => 'asc'
+            ],
+            'pageNumber' => [
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.pageNumber.title',
+                'description' => 'arrizalamin.portfolio::lang.components.portfolio.properties.pageNumber.description',
+                'type' => 'string',
+                'default' => '{{ :page }}',
+                'group' => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.advanced'
+            ],
+            'selectedTag' => [
+                'title' => 'arrizalamin.portfolio::lang.components.portfolio.properties.selectedTag.title',
+                'description' => 'arrizalamin.portfolio::lang.components.portfolio.properties.selectedTag.description',
+                'type' => 'string',
+                'group' => 'arrizalamin.portfolio::lang.components.portfolio.properties.group.advanced',
+                'default' => '{{ :selected_tag }}'
             ]
         ];
     }
@@ -58,20 +66,48 @@ class Portfolio extends ComponentBase
 
     public function getOrderOptions()
     {
-        return ['asc' => 'Ascending', 'desc' => 'Descending'];
+        return [
+            'asc' => Lang::get('arrizalamin.portfolio::lang.components.portfolio.properties.order.ascending'),
+            'desc' => Lang::get('arrizalamin.portfolio::lang.components.portfolio.properties.order.descending')
+        ];
     }
 
     public function onRun()
     {
-        $this->portfolio = $this->loadItems();
+        // find the correct property to select the items with
+        $object = null;
+        if($this->property('selectedTag') != null){
+            $object = $this->loadItemsByTag($this->property('selectedTag'));
+        }elseif($this->property('category') != null){
+            $object = $this->loadItemsByCategory($this->property('category'));
+        }
+
+        // check if a valid object has been created
+        if( !$object ){
+            // display all items
+            $this->portfolio = Item::paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
+        }else{
+            // show the items in the portfolio
+            $this->portfolio = $object->items()
+                ->orderBy('created_at', $this->property('order'))->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
+        }
     }
 
-    protected function loadItems()
+    protected function loadItemsByCategory($selectedCategory, $byName = false)
     {
-        if (! $category = Category::find($this->property('category')) )
-            return Item::paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
+        if($byName){
+            $category = Category::where('name', '=', $selectedCategory)->first();
+        }else{
+            $category = Category::find($selectedCategory);
+        }
 
-        return $category->items()->orderBy('created_at', $this->property('order'))->paginate($this->property('itemsPerPage'), $this->property('pageNumber'));
+        return $category;
+    }
+
+    protected function loadItemsByTag($selectedTag)
+    {
+        $tag = Tag::where('name', '=', $selectedTag)->first();
+        return $tag;
     }
 
 }

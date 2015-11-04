@@ -11,6 +11,16 @@ fields:
         span: right
         type: relation
         nameFrom: name
+    url:
+        label: arrizalamin.portfolio::lang.fields.item.url
+        type: text
+        span: left
+    tagbox:
+        label: arrizalamin.portfolio::lang.fields.item.tags
+        span: right
+        type: owl-tagbox
+        nameFrom: name
+        slugify: true
     description:
         label: arrizalamin.portfolio::lang.fields.item.description
         type: richeditor
@@ -18,6 +28,3 @@ fields:
         label: arrizalamin.portfolio::lang.fields.item.images
         type: fileupload
         mode: image
-    url:
-        label: arrizalamin.portfolio::lang.fields.item.url
-        type: text
