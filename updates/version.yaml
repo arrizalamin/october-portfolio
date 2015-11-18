@@ -15,3 +15,6 @@
     - Added (dynamic) Tags
     - Minor bug fixes
     - create_tags_table.php
+1.3.1:
+    - Added translatable functionality to category model
+    - Fixed requirement of Rainlab.Translate plugin
