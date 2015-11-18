@@ -29,7 +29,7 @@ class Tag extends Model
      * @var array Validation rules
      */
     public $rules = [
-        'name' => 'required|unique:arrizalamin_portfolio_tags|regex:/^[a-z0-9]+$/'
+        'name' => 'required|unique:arrizalamin_portfolio_tags|regex:/^[a-z0-9-_]+$/'
     ];
 
     /**

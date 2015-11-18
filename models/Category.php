@@ -18,6 +18,14 @@ class Category extends Model
      */
     protected $guarded = [];
 
+    /** {@inheritdoc} */
+    public $implement = ['RainLab.Translate.Behaviors.TranslatableModel'];
+
+    /**
+     * @var array Translatable fields
+     */
+    public $translatable = ['name', 'description'];
+
     /**
      * @var array Relations
      */
