@@ -8,6 +8,12 @@ use Backend;
  */
 class Plugin extends PluginBase
 {
+    /**
+     * @var array Require the RainLab.Translate plugin
+     */
+    public $require = [
+        'RainLab.Translate',
+    ];
 
     /**
      * Returns information about this plugin.
@@ -94,7 +100,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'ArrizalAmin\Portfolio\Components\Portfolio' => 'portfolio'
+            'ArrizalAmin\Portfolio\Components\Portfolio' => 'portfolio',
+            'ArrizalAmin\Portfolio\Components\Item' => 'item'
         ];
     }
 }
