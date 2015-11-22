@@ -3,9 +3,6 @@
 # ===================================
 
 columns:
-    id:
-        label: arrizalamin.portfolio::lang.columns.category.id
-        searchable: true
     name:
         label: arrizalamin.portfolio::lang.columns.category.name
         searchable: true

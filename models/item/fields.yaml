@@ -6,18 +6,23 @@ fields:
     title:
         label: arrizalamin.portfolio::lang.fields.item.title
         span: left
+    slug:
+        label: arrizalamin.portfolio::lang.fields.item.slug
+        span: right
+        preset:
+            field: title
+            type: slug
     category:
         label: arrizalamin.portfolio::lang.fields.item.category
-        span: right
+        span: left
         type: relation
         nameFrom: name
     url:
         label: arrizalamin.portfolio::lang.fields.item.url
         type: text
-        span: left
+        span: right
     tagbox:
         label: arrizalamin.portfolio::lang.fields.item.tags
-        span: right
         type: owl-tagbox
         nameFrom: name
         slugify: true

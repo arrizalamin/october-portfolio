@@ -33,4 +33,20 @@ class Category extends Model
         'items' => ['ArrizalAmin\Portfolio\Models\Item']
     ];
 
+    /**
+     * Set the PageUrl parameter to link the correct page
+     *
+     * @param $pageName
+     * @param $controller
+     * @return mixed
+     */
+    public function setPageUrl($pageName, $controller)
+    {
+        $params = [
+            'selected_cat' => $this->slug,
+        ];
+
+        return $this->pageUrl = $controller->pageUrl($pageName, $params);
+    }
+
 }

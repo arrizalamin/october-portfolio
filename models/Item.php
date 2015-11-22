@@ -59,7 +59,24 @@ class Item extends Model
         $this->tags = $tags;
     }
 
-     /**
+    /**
+     * Set the PageUrl parameter to link the correct page
+     *
+     * @param $pageName
+     * @param $controller
+     * @return mixed
+     */
+    public function setPageUrl($pageName, $controller)
+    {
+        $params = [
+            'item_slug' => $this->slug,
+        ];
+
+        return $this->pageUrl = $controller->pageUrl($pageName, $params);
+    }
+
+
+    /**
      * Add translation support to this model, if available.
      * @return void
      */
