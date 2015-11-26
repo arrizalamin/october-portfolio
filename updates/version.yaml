@@ -18,3 +18,10 @@
 1.3.1:
     - Added translatable functionality to category model
     - Fixed requirement of Rainlab.Translate plugin
+1.4.0:
+    - Created Item component to show portfolio items
+    - Added slug fields to items and categories
+    - Added link functionality to categories
+    - Seed example data
+    - update_tables_with_slugs.php
+    - seed_example_data.php

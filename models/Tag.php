@@ -60,4 +60,21 @@ class Tag extends Model
         $this->attributes['name'] = strtolower($value);
     }
 
+    /**
+     * Set the PageUrl parameter to link the correct page
+     *
+     * @param $pageName
+     * @param $controller
+     * @return mixed
+     */
+    public function setPageUrl($pageName, $controller)
+    {
+        $params = [
+            'selected_tag' => $this->name,
+        ];
+
+        return $this->pageUrl = $controller->pageUrl($pageName, $params);
+    }
+
+
 }
