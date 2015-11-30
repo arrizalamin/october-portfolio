@@ -2,7 +2,7 @@
 
 return [
     'plugin' => [
-        'name' => 'Portfolio list',
+        'name' => 'Portfolio',
         'description' => 'A plugin that allows you to show off your past projects.',
     ],
     'navigation' => [
@@ -19,7 +19,7 @@ return [
     ],
     'components' => [
         'portfolio' => [
-            'name' => 'Portfolio',
+            'name' => 'Portfolio List',
             'description' => 'Create a list of portfolio.',
             'properties' => [
                 'category' => [
@@ -68,7 +68,7 @@ return [
             ],
         ],
         'item' => [
-            'name' => 'Item',
+            'name' => 'Portfolio Item',
             'description' => 'Display a single item from the portfolio collection.',
             'properties' => [
                 'item' => [
