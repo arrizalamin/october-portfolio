@@ -10,6 +10,11 @@ class SeedExampleData extends Seeder
 
     public function run()
     {
+        // exit when items are found
+        if(count(Item::all()) > 0) {
+            return false;
+        }
+        
         /**
          * Add example categories
          */
