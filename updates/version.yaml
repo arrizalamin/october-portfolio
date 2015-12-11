@@ -3,7 +3,6 @@
     - Create Items and Categories Table
     - create_items_table.php
     - create_categories_table.php
-    - seed_all_tables.php
 1.1.0:
     - Using Localization File
     - Add Support for Rainlab.Translate
