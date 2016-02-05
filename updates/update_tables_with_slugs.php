@@ -8,15 +8,19 @@ class UpdateTablesWithSlugs extends Migration
 
     public function up()
     {
-        Schema::table('arrizalamin_portfolio_items', function($table)
-        {
-            $table->string('slug')->index();
-        });
+        if (! Schema::hasColumn('arrizalamin_portfolio_items', 'slug')) {
+            Schema::table('arrizalamin_portfolio_items', function($table)
+            {
+                $table->string('slug')->index();
+            });
+        }
 
-        Schema::table('arrizalamin_portfolio_categories', function($table)
-        {
-            $table->string('slug')->index();
-        });
+        if (! Schema::hasColumn('arrizalamin_portfolio_categories', 'slug')) {
+            Schema::table('arrizalamin_portfolio_categories', function($table)
+            {
+                $table->string('slug')->index();
+            });
+        }
     }
 
     public function down()

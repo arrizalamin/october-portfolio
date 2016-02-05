@@ -49,6 +49,11 @@ class Tag extends Model
             'ArrizalAmin\Portfolio\Models\Item',
             'table' => 'arrizalamin_portfolio_item_tag',
             'order' => 'arrizalamin_portfolio_items.updated_at desc'
+        ],
+        'items_count' => [
+            'ArrizalAmin\Portfolio\Models\Item',
+            'table' => 'arrizalamin_portfolio_item_tag',
+            'count' => true
         ]
     ];
 

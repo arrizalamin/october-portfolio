@@ -8,9 +8,6 @@ columns:
         searchable: true
     items:
         label: arrizalamin.portfolio::lang.columns.tag.items
-        select: >
-            (
-                select count(*)
-                from `arrizalamin_portfolio_item_tag`
-                where `arrizalamin_portfolio_item_tag`.`tag_id` = `arrizalamin_portfolio_tags`.`id`
-            )
+        relation: items_count
+        valueFrom: count
+        default: 0
