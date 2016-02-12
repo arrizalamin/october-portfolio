@@ -9,13 +9,6 @@ use Backend;
 class Plugin extends PluginBase
 {
     /**
-     * @var array Require the RainLab.Translate plugin
-     */
-    public $require = [
-        'RainLab.Translate',
-    ];
-
-    /**
      * Returns information about this plugin.
      *
      * @return array
