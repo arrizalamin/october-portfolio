@@ -26,3 +26,6 @@
     - seed_example_data.php
 1.4.1: Minor bug fixes
 1.4.2: Remove Rainlab.Translate dependency
+1.4.3:
+    - Video link is added to items	
+    - add_video_url_from_item_table.php

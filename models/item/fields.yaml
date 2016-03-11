@@ -21,6 +21,9 @@ fields:
         label: arrizalamin.portfolio::lang.fields.item.url
         type: text
         span: right
+    video_url:
+        label: arrizalamin.portfolio::lang.fields.item.video_url
+        type: text
     tagbox:
         label: arrizalamin.portfolio::lang.fields.item.tags
         type: owl-tagbox
