@@ -146,7 +146,7 @@ Copy /plugins/arrizalamin/portfolio/components/item/default.htm to your themes p
             <small>posted {{ item.created_at|date('j m Y') }} in <a href="{{ item.category.pageUrl }}">{{ item.category.name }}</a></small>
             <div>
                 {% for tag in item.tags %}
-                <a href="\portfolio\tags\{{ tag.name}}"><span class="label label-default">{{ tag.name }}</span></a>
+                <a href="{{ tag.pageUrl }}"><span class="label label-default">{{ tag.name }}</span></a>
                 {% endfor %}
             </div>
             <p>{{ item.description|raw }}</p>
