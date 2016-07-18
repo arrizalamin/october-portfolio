@@ -2,6 +2,10 @@
     <div class="row">
         {% for item in __SELF__.portfolio %}
         <div class="col-lg-4">
+	  {% if item.video_url %}
+	  <iframe width="560" height="315" src="{{ item.video_url }}" frameborder="0" allowfullscreen></iframe>
+          {% endif %}
+	  
             {% if item.images|length > 0 %}
             <div>
                 {% set image = item.images.first %}

@@ -144,7 +144,8 @@ return [
             'id' => 'ID',
             'title' => 'Title',
             'category' => 'Category',
-            'tags' => 'Tags'
+            'tags' => 'Tags',
+            'video_url' => 'Video URL',
         ],
         'category' => [
             'id' => 'ID',
@@ -165,7 +166,8 @@ return [
             'tags' => 'Tags',
             'description' => 'Description',
             'images' => 'Images',
-            'url' => 'URL'
+            'url' => 'URL',
+            'video_url' => 'Video URL'
         ],
         'category' => [
             'name' => 'Name',
