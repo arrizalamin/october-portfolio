@@ -29,3 +29,4 @@
 1.4.3:
     - Video link is added to items	
     - add_video_url_from_item_table.php
+1.4.4: Fixed public folder mirroring

@@ -15,6 +15,12 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "owl/tagbox": "~1.0@dev"
+    "owl/tagbox": "~1.0@dev",
+    "mnsami/composer-custom-directory-installer": "1.1.*"
+  },
+  "extra": {
+    "installer-paths": {
+      "./assets/": ["owl/tagbox"]
+    }
   }
 }

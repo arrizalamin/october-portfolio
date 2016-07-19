@@ -2,6 +2,7 @@
 
 use System\Classes\PluginBase;
 use Backend;
+use Owl\FormWidgets\Tagbox\Widget;
 
 /**
  * Portfolio Plugin Information File
@@ -78,7 +79,7 @@ class Plugin extends PluginBase
     public function registerFormWidgets()
     {
         return [
-            'Owl\FormWidgets\Tagbox\Widget' => [
+            Widget::class => [
                 'label' => 'Tagbox',
                 'code' => 'owl-tagbox'
             ],
