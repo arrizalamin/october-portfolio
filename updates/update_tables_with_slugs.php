@@ -11,14 +11,14 @@ class UpdateTablesWithSlugs extends Migration
         if (! Schema::hasColumn('arrizalamin_portfolio_items', 'slug')) {
             Schema::table('arrizalamin_portfolio_items', function($table)
             {
-                $table->string('slug')->index();
+                $table->string('slug')->default('')->index();
             });
         }
 
         if (! Schema::hasColumn('arrizalamin_portfolio_categories', 'slug')) {
             Schema::table('arrizalamin_portfolio_categories', function($table)
             {
-                $table->string('slug')->index();
+                $table->string('slug')->default('')->index();
             });
         }
     }
