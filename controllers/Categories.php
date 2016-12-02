@@ -25,19 +25,4 @@ class Categories extends Controller
 
         BackendMenu::setContext('ArrizalAmin.Portfolio', 'portfolio', 'categories');
     }
-
-    public function index_onDelete()
-    {
-        if ($checkedIds = post('checked')) {
-            foreach ($checkedIds as $itemId) {
-                if (! $table = Category::find($itemId))
-                    continue;
-                $table->delete();
-            }
-
-            Flash::success(Lang::get('backend::lang.form.delete_success', ['name' => Lang::get('arrizalamin.portfolio::lang.controller.form.categories.title')]));
-        }
-
-        return $this->listRefresh();
-    }
 }

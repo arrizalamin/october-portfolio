@@ -27,32 +27,15 @@ class Tags extends Controller
     }
 
     /**
-     * Delete tags
-     *
-     * @return mixed $this->listRefresh()
-     */
-    public function index_onDelete()
-    {
-        if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds))
-            $delete = Tag::whereIn('id', $checkedIds)->delete();
-
-        if(!isset($delete) && !$delete)
-            return Flash::error('An unknown error has occured.');
-
-        Flash::success(Lang::get('backend::lang.form.delete_success', ['name' => Lang::get('arrizalamin.portfolio::lang.controller.form.tags.title')]));
-
-        return $this->listRefresh();
-    }
-
-    /**
      * Removes tags with no associated posts
      *
      * @return  $this->listRefresh()
      */
     public function index_onRemoveOrphanedTags()
     {
-        if (!$delete = Tag::has('items', 0)->delete())
+        if (!$delete = Tag::has('items', 0)->delete()) {
             return Flash::error('An unknown error has occured.');
+        }
 
         Flash::success('Successfully deleted orphaned tags.');
 
