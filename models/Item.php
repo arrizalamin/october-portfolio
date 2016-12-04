@@ -46,7 +46,8 @@ class Item extends Model
      *
      * @return mixed
      */
-    public function getTagboxAttribute(){
+    public function getTagboxAttribute()
+    {
         return $this->tags()->lists('name');
     }
 
@@ -55,7 +56,8 @@ class Item extends Model
      *
      * @param $tags
      */
-    public function setTagboxAttribute($tags){
+    public function setTagboxAttribute($tags)
+    {
         $this->tags = $tags;
     }
 
@@ -97,13 +99,14 @@ class Item extends Model
         });
     }
 
-    public function save(array $options = NULL, $sessionKey = NULL)
+    /**
+     * After the model is saved, either created or updated.
+     */
+    public function afterSave()
     {
-        parent::save($options, $sessionKey);
-
-        if($this->tags){
+        if ($this->tags) {
             $ids = [];
-            foreach($this->tags as $name){
+            foreach ($this->tags as $name) {
                 $create = Tag::firstOrCreate(['name' => $name]);
                 $ids[] = $create->id;
             }
